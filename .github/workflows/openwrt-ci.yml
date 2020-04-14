@@ -30,7 +30,10 @@ jobs:
         uses: actions/checkout@master
         with:
           ref: master
-
+      
+      - name: 修改git下载缓冲大小
+        run: git config --global http.postBuffer 524288000
+      
       - name: Space cleanup
         env:
           DEBIAN_FRONTEND: noninteractive
